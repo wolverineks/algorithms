@@ -1,5 +1,6 @@
 module SelectionSort
   extend self
+  require 'wikipedia'
 
   def sort(array, options = :asc)
     #iterate over the given array
@@ -18,14 +19,8 @@ module SelectionSort
   end
 
   def profile
-    puts "-----------------------------------------------------------"
-    puts "    In computer science, selection sort is a sorting algorithm,
-    specifically an in-place comparison sort"
-    puts "-----------------------------------------------------------"
-    puts "    Good with memory management"
-    puts "-----------------------------------------------------------"
-    puts "    Complexity: O(n^2)"
-    puts "-----------------------------------------------------------"
+    page = Wikipedia.find( 'Selection Sort' )
+    puts page.summary.split("\n").map { |a| a.strip }.join(" ").gsub(/{.+}/, "")
   end
 
 end

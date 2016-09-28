@@ -1,5 +1,6 @@
 module BinarySearch
   extend self
+  require 'wikipedia'
 
   def search(array, key, upper = array.length - 1, lower = 0)
     mid = (upper + lower) / 2
@@ -15,6 +16,11 @@ module BinarySearch
       upper = mid - 1
       search(array, key, upper, lower)
     end
+  end
+
+  def profile
+    page = Wikipedia.find( 'Binary Search' )
+    puts page.summary.split("\n").map { |a| a.strip }.join(" ").gsub(/{.+}/, "")
   end
 
 end

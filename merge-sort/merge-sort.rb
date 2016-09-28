@@ -1,13 +1,17 @@
 module MergeSort
   extend self
+  require 'wikipedia'
 
   def sort(array, options = :asc)
-    return array if array.length == 1 # Base Case
-    middle = (array.length / 2).floor
-    left   = sort(array[0...middle], options) # Divide
-    right  = sort(array[middle...array.length], options) # Divide
+    if array.length <= 1 # Base Case
+      array
+    else
+      middle = (array.length / 2).floor
+      left   = sort(array[0..middle - 1], options) # Divide
+      right  = sort(array[middle...array.length], options) # Divide
 
-    options == :asc ? merge_asc(left, right) : merge_desc(left, right) # Conquer
+      options == :asc ? merge_asc(left, right) : merge_desc(left, right) # Conquer
+    end
   end
 
   def merge_asc(left, right)
@@ -35,17 +39,8 @@ module MergeSort
   end
 
   def profile
-    puts "-----------------------------------------------------------"
-    puts "    In computer science, merge sort (also commonly spelled
-    mergesort) is an efficient, general-purpose, comparison-based
-    sorting algorithm. Most implementations produce a stable sort,
-    which means that the implementation preserves the input order of
-    equal elements in the sorted output."
-    puts "-----------------------------------------------------------"
-    puts "    Very fast for lists < 10"
-    puts "-----------------------------------------------------------"
-    puts "    Complexity: O(n^2)"
-    puts "-----------------------------------------------------------"
+    page = Wikipedia.find( 'Merge Sort' )
+    puts page.summary.split("\n").map { |a| a.strip }.join(" ").gsub(/{.+}/, "")
   end
 
 end

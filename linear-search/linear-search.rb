@@ -1,5 +1,6 @@
 module LinearSearch
   extend self
+  require 'wikipedia'
 
   def search(array, element)
     # iterate over the given array
@@ -13,17 +14,9 @@ module LinearSearch
     nil
   end
 
-  def self.profile
-    puts "-----------------------------------------------------------"
-    puts "    In computer science, linear search or sequential search is a
-    method for finding a target value within a list. It sequentially
-    checks each element of the list for the target value until a
-    match is found or until all the elements have been searched."
-    puts "-----------------------------------------------------------"
-    puts "    Very fast for lists < 10"
-    puts "-----------------------------------------------------------"
-    puts "    Complexity: O(n^2)"
-    puts "-----------------------------------------------------------"
+  def profile
+    page = Wikipedia.find( 'Linear Search' )
+    puts page.summary.split("\n").map { |a| a.strip }.join(" ").gsub(/{.+}/, "")
   end
 
 end
