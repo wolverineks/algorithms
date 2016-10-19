@@ -14,3 +14,5 @@ module Test
   end
 
 end
+
+system "clear"
