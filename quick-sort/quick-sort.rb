@@ -2,11 +2,11 @@ module QuickSort
   extend self
   require 'wikipedia'
 
-  def sort(array: [], low: 0, high: array.length - 1, order: :asc)
+  def sort(array, low: 0, high: array.length - 1, order: :asc)
     if low < high
       p_index = partition(array, low, high, order)
-      sort(array: array, low: low, high: p_index - 1, order: order)
-      sort(array: array, low: p_index + 1, high: high, order: order)
+      sort(array, low: low, high: p_index - 1, order: order)
+      sort(array, low: p_index + 1, high: high, order: order)
     end
 
     array
