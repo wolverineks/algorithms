@@ -3,8 +3,10 @@ SimpleCov.start
 SimpleCov.command_name 'Unit Tests'
 
 require "./selection-sort.rb"
-require "../test/test.rb"
-include Test
+# require "../test/test.rb"
+# include Test
+require 'basic_test'
+include BasicTest
 
 test "SelectionSort.sort, with no options",
   expected = [2, 3, 6],

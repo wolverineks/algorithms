@@ -3,8 +3,10 @@ SimpleCov.start
 SimpleCov.command_name 'Unit Tests'
 
 require "./binary-search.rb"
-require "../test/test.rb"
-include Test
+# require "../test/test.rb"
+# include Test
+require 'basic_test'
+include BasicTest
 
 test "BinarySearch.search, with element present",
   expected = 0,

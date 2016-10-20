@@ -3,8 +3,10 @@ SimpleCov.start
 SimpleCov.command_name 'Unit Tests'
 
 require "./quick-sort.rb"
-require "../test/test.rb"
-include Test
+# require "../test/test.rb"
+# include Test
+require 'basic_test'
+include BasicTest
 
 test "QuickSort.sort, with no options",
   expected = [1, 2, 3, 3, 4, 5, 6, 7, 8, 9],
