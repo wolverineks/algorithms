@@ -54,6 +54,24 @@ module BinarySearch
     result = last - first + 1
   end
 
+  def rotations(array)
+    lower = 0
+    upper = array.length - 1
+    return 0 if array[lower] < array[upper]
+
+    while lower <= upper
+      mid = (upper + lower) / 2
+
+      if array[lower] < array[mid]
+        lower = mid
+      elsif array[upper] > array[mid]
+        upper = mid
+      else
+        return array.length - 1 - mid
+      end
+    end
+  end
+
   def profile
     page = Wikipedia.find( 'Binary Search' )
     puts page.summary.split("\n").map { |a| a.strip }.join(" ").gsub(/{.+}/, "")
