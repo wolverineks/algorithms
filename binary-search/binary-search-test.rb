@@ -65,17 +65,25 @@ test "BinarySearch.count, with element not present",
   actual    = BinarySearch.count([2, 4, 5, 6, 7, 8, 9, 10, 10, 10, 18], 11)
 
 test "BinarySearch.rotations",
-  expected  = 4,
+  expected  = 5,
   actual    = BinarySearch.rotations([5, 6, 7, 8, 9, 1, 2, 3, 4])
 
 test "BinarySearch.rotations",
-  expected  = 1,
+  expected  = 5,
   actual    = BinarySearch.rotations([2, 3, 4, 5, 6, 1])
 
 test "BinarySearch.rotations",
-  expected  = 6,
+  expected  = 1,
   actual    = BinarySearch.rotations([9, 1, 2, 3, 4, 5, 6])
 
 test "BinarySearch.rotations, with no rotations",
   expected  = 0,
   actual    = BinarySearch.rotations([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+test "BinarySearch.rotations, with duplicates",
+  expected  = 9,
+  actual    = BinarySearch.rotations([5, 6, 7, 8, 9, 9, 9, 9, 9, 1, 2, 3, 4])
+
+test "BinarySearch.rotations, with iteration",
+  expected  = 9,
+  actual    = BinarySearch.rotations([5, 6, 7, 8, 9, 9, 9, 9, 9, 1, 2, 3, 4], method: :iteration)

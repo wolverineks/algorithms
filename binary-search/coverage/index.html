@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-10-20T14:39:51-07:00">2016-10-20T14:39:51-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-10-21T16:02:38-07:00">2016-10-21T16:02:38-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">95.74%</span></span>
+    (<span class="covered_percent"><span class="green">96.49%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.0
+         5.6
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>1</b> files in total.
-    <b>47</b> relevant lines. 
-    <span class="green"><b>45</b> lines covered</span> and
+    <b>57</b> relevant lines. 
+    <span class="green"><b>55</b> lines covered</span> and
     <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#cfa53e6d028e33cdca200a0d9f93686b21b754f7" class="src_link" title="binary-search.rb">binary-search.rb</a></td>
-        <td class="green strong">95.74 %</td>
-        <td>80</td>
-        <td>47</td>
-        <td>45</td>
+        <td class="green strong">96.49 %</td>
+        <td>99</td>
+        <td>57</td>
+        <td>55</td>
         <td>2</td>
-        <td>6.0</td>
+        <td>5.6</td>
       </tr>
       
     </tbody>
@@ -79,10 +79,10 @@
         <div class="source_table" id="cfa53e6d028e33cdca200a0d9f93686b21b754f7">
   <div class="header">
     <h3>binary-search.rb</h3>
-    <h4><span class="green">95.74 %</span> covered</h4>
+    <h4><span class="green">96.49 %</span> covered</h4>
     <div>
-      <b>47</b> relevant lines. 
-      <span class="green"><b>45</b> lines covered</span> and
+      <b>57</b> relevant lines. 
+      <span class="green"><b>55</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -429,142 +429,256 @@
         <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
-          <code class="ruby">  def rotations(array)</code>
+          <code class="ruby">  def rotations(array, method: :recursion)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="58">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="6" data-linenumber="58">
+          <span class="hits">6</span>
           
-          <code class="ruby">    lower = 0</code>
+          <code class="ruby">    case method</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="59">
-          <span class="hits">4</span>
+        <li class="never" data-hits="" data-linenumber="59">
           
-          <code class="ruby">    upper = array.length - 1</code>
+          
+          <code class="ruby">    when :iteration</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="60">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
           
-          <code class="ruby">    return 0 if array[lower] &lt; array[upper]</code>
+          <code class="ruby">      iteration_rotations(array)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="61">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    when :recursion</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="62">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="62">
+          <span class="hits">5</span>
           
-          <code class="ruby">    while lower &lt;= upper</code>
+          <code class="ruby">      recursion_rotations(array)</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="63">
-          <span class="hits">11</span>
-          
-          <code class="ruby">      mid = (upper + lower) / 2</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="65">
-          <span class="hits">11</span>
-          
-          <code class="ruby">      if array[lower] &lt; array[mid]</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="66">
-          <span class="hits">4</span>
-          
-          <code class="ruby">        lower = mid</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
-          
-          
-          <code class="ruby">      elsif array[upper] &gt; array[mid]</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="68">
-          <span class="hits">4</span>
-          
-          <code class="ruby">        upper = mid</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="69">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="70">
-          <span class="hits">3</span>
-          
-          <code class="ruby">        return array.length - 1 - mid</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def iteration_rotations(array, method: :iteration)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    low = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    high = (array.length - 1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    while array[low] &gt; array[high]</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="71">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      mid = (low + high) / 2</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="72">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      if array[mid] &gt; array[high]</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="73">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        low = mid + 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      else</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="75">
           <span class="hits">1</span>
           
-          <code class="ruby">  def profile</code>
+          <code class="ruby">        high = mid</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">    page = Wikipedia.find( &#39;Binary Search&#39; )</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="77">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">    puts page.summary.split(&quot;\n&quot;).map { |a| a.strip }.join(&quot; &quot;).gsub(/{.+}/, &quot;&quot;)</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    low</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="covered" data-hits="6" data-linenumber="82">
+          <span class="hits">6</span>
+          
+          <code class="ruby">  def recursion_rotations(array, lower = 0, upper = (array.length - 1), method: :recursion)</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="83">
+          <span class="hits">14</span>
+          
+          <code class="ruby">    mid = (upper + lower) / 2</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="85">
+          <span class="hits">14</span>
+          
+          <code class="ruby">    if array[lower] &gt; array[mid]</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="86">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      recursion_rotations(array, lower, mid)</code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="87">
+          <span class="hits">11</span>
+          
+          <code class="ruby">    elsif array[mid] &gt; array[upper]</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="88">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      recursion_rotations(array, mid + 1, upper)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="89">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="90">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      lower</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="91">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="92">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def profile</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="95">
+          
+          
+          <code class="ruby">    page = Wikipedia.find( &#39;Binary Search&#39; )</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="96">
+          
+          
+          <code class="ruby">    puts page.summary.split(&quot;\n&quot;).map { |a| a.strip }.join(&quot; &quot;).gsub(/{.+}/, &quot;&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby">end</code>

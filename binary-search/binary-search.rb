@@ -54,21 +54,40 @@ module BinarySearch
     result = last - first + 1
   end
 
-  def rotations(array)
-    lower = 0
-    upper = array.length - 1
-    return 0 if array[lower] < array[upper]
+  def rotations(array, method: :recursion)
+    case method
+    when :iteration
+      iteration_rotations(array)
+    when :recursion
+      recursion_rotations(array)
+    end
+  end
 
-    while lower <= upper
-      mid = (upper + lower) / 2
+  def iteration_rotations(array, method: :iteration)
+    low = 0
+    high = (array.length - 1)
 
-      if array[lower] < array[mid]
-        lower = mid
-      elsif array[upper] > array[mid]
-        upper = mid
+    while array[low] > array[high]
+      mid = (low + high) / 2
+      if array[mid] > array[high]
+        low = mid + 1
       else
-        return array.length - 1 - mid
+        high = mid
       end
+    end
+
+    low
+  end
+
+  def recursion_rotations(array, lower = 0, upper = (array.length - 1), method: :recursion)
+    mid = (upper + lower) / 2
+
+    if array[lower] > array[mid]
+      recursion_rotations(array, lower, mid)
+    elsif array[mid] > array[upper]
+      recursion_rotations(array, mid + 1, upper)
+    else
+      lower
     end
   end
 
