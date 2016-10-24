@@ -91,6 +91,14 @@ module BinarySearch
     end
   end
 
+  def circular_search(array, key)
+    start = rotations(array)
+    array = array[start..-1] + array[0..start - 1]
+    unaltered_result = search(array, key)
+
+    unaltered_result ? unaltered_result + start : nil
+  end
+
   def profile
     page = Wikipedia.find( 'Binary Search' )
     puts page.summary.split("\n").map { |a| a.strip }.join(" ").gsub(/{.+}/, "")

@@ -87,3 +87,11 @@ test "BinarySearch.rotations, with duplicates",
 test "BinarySearch.rotations, with iteration",
   expected  = 9,
   actual    = BinarySearch.rotations([5, 6, 7, 8, 9, 9, 9, 9, 9, 1, 2, 3, 4], method: :iteration)
+
+test "BinarySearch.circular_search, when element is present",
+  expected  = 7,
+  actual    = BinarySearch.circular_search([5, 6, 7, 8, 9, 9, 1, 2, 3, 4], 2)
+
+test "BinarySearch.circular_search, when element is not present",
+  expected  = nil,
+  actual    = BinarySearch.circular_search([5, 6, 7, 8, 9, 9, 1, 2, 3, 4], 11)
