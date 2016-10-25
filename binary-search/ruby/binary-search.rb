@@ -63,7 +63,7 @@ module BinarySearch
     end
   end
 
-  def iteration_rotations(array, method: :iteration)
+  def iteration_rotations(array)
     low = 0
     high = (array.length - 1)
 
