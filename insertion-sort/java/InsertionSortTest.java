@@ -29,13 +29,20 @@ public class InsertionSortTest
 
   static void test( String testName, int [] expected, int [] actual)
   {
+
     System.out.println(testName);
-    if (Arrays.equals(expected, actual)) {
-      System.out.println("PASS");
+
+    double startTime = System.nanoTime();
+    boolean result = Arrays.equals(expected, actual);
+    double endTime = System.nanoTime();
+    double durationInMicroseconds = (endTime - startTime) / 1000;
+
+    if (result) {
+      System.out.println("PASS: (" + durationInMicroseconds + " μs)");
     } else {
       System.out.println("Expected: " + Arrays.toString(expected));
       System.out.println("Actual:   " + Arrays.toString(actual));
-      System.out.println("FAIL");
+      System.out.println("FAIL: (" + durationInMicroseconds + " μs)");
     }
     System.out.println("----------------------------------");
   }
