@@ -13,9 +13,9 @@ test "SelectionSort.sort, with no options",
   actual   = SelectionSort.sort([6, 3, 2])
 
 test "SelectionSort.sort, ascending",
-  expected = [1, 2, 3, 4, 5, 6, 7, 8, 9],
-  actual   = SelectionSort.sort([3, 2, 6, 8, 4, 7, 5, 9, 1], :asc)
+  expected = [0, 1, 2, 3, 5, 6, 8, 9, 9],
+  actual   = SelectionSort.sort([3, 5, 8, 1, 6, 2, 9, 9, 0], :asc)
 
 test "SelectionSort.sort, descending",
-  expected = [9, 8, 7, 6, 5, 4, 3, 2, 1],
-  actual   = SelectionSort.sort([3, 2, 6, 8, 4, 7, 5, 9, 1], :desc)
+  expected = [9, 9, 8, 6, 5, 3, 2, 1, 0],
+  actual   = SelectionSort.sort([3, 5, 8, 1, 6, 2, 9, 9, 0], :desc)
