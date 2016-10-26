@@ -6,7 +6,7 @@ module MergeSort
     if array.length <= 1 # Base Case
       array
     else
-      middle = (array.length / 2).floor
+      middle = (array.length / 2)
       left   = sort(array[0..middle - 1], options) # Divide
       right  = sort(array[middle...array.length], options) # Divide
 

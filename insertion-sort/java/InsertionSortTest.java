@@ -1,9 +1,8 @@
 import java.util.Arrays;
 
-public class InsertionSortTest
-{
-  public static void main( String[] args )
-  {
+public class InsertionSortTest {
+  
+  public static void main( String[] args ) {
     int [] sortedArrayASC  = { 1, 2, 3, 4, 5, 6, 7 };
     int [] sortedArrayDESC = { 7, 6, 5, 4, 3, 2, 1 };
     int [] unsortedArray   = { 2, 7, 4, 1, 5, 3, 6 };
@@ -27,8 +26,7 @@ public class InsertionSortTest
     );
   }
 
-  static void test( String testName, int [] expected, int [] actual)
-  {
+  static void test( String testName, int [] expected, int [] actual) {
 
     System.out.println(testName);
 
