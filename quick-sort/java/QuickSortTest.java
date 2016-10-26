@@ -1,44 +1,36 @@
 import java.util.Arrays;
 
-public class MergeSortTest {
+public class QuickSortTest {
 
   public static void main( String[] args ) {
     int[] unsortedArray      = { 3, 5, 8, 1, 6, 2, 9, 9, 0 };
     int[] sortedArray        = { 0, 1, 2, 3, 5, 6, 8, 9, 9 };
     int[] reverseSortedArray = { 9, 9, 8, 6, 5, 3, 2, 1, 0 };
-    int[] smallArray1 = {1};
-    int[] smallArray2 = {2};
-    int[] resultAsc = {1, 2};
-    int[] resultDesc = {2, 1};
+    int[] before = { 1, 2 };
+    int[] after = { 2, 1 };
 
     test(
-      "MergeSort.mergeAsc",
-      resultAsc,
-      MergeSort.mergeAsc(smallArray1, smallArray2)
+      "QuickSort.swap",
+      after,
+      QuickSort.swap(before, 0, 1)
     );
 
     test(
-      "MergeSort.mergeDesc",
-      resultDesc,
-      MergeSort.mergeDesc(smallArray1, smallArray2)
-    );
-
-    test(
-      "MergeSort.sort, with no options",
+      "QuickSort.sort, with no options",
       sortedArray,
-      MergeSort.sort( unsortedArray )
+      QuickSort.sort( unsortedArray )
     );
 
     test(
-      "MergeSort.sort, ascending",
+      "QuickSort.sort, ascending",
       sortedArray,
-      MergeSort.sort( unsortedArray, MergeSort.Order.ASC )
+      QuickSort.sort( unsortedArray, QuickSort.Order.ASC )
     );
 
     test(
-      "MergeSort.sort, descending",
+      "QuickSort.sort, descending",
       reverseSortedArray,
-      MergeSort.sort( unsortedArray, MergeSort.Order.DESC )
+      QuickSort.sort( unsortedArray, QuickSort.Order.DESC )
     );
   }
 
