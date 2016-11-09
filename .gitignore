@@ -2,3 +2,5 @@
 .tags1
 **/coverage
 **/*.class
+**/node_modules
+**/.nyc_output
