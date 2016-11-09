@@ -1,12 +1,10 @@
 {
   "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha",
     "cover": "nyc --reporter=lcov --reporter=text --reporter=html --extension .js npm test",
-    "test": "mocha",
     "lint": "standard",
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "lint --fix": "standard --fix"
   },
-
   "devDependencies": {
     "chai": "^3.5.0",
     "enzyme": "^2.0.0",
